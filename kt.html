@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anonymous Message for Kartik</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #1e1e1e, #3c3c3c);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: "Comic Sans MS", sans-serif;
+            color: white;
+            overflow: hidden;
+        }
+
+        #main-text {
+            font-size: 50px;
+            text-align: center;
+            animation: shake 0.4s infinite;
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+
+        #subtext {
+            font-size: 22px;
+            margin-top: 10px;
+            opacity: 0.7;
+        }
+
+        #playBtn {
+            margin-top: 40px;
+            padding: 15px 25px;
+            font-size: 20px;
+            border: none;
+            border-radius: 10px;
+            background: #ff4747;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #playBtn:hover {
+            background: #ff1f1f;
+        }
+
+        .emoji {
+            font-size: 40px;
+            position: absolute;
+            animation: float 4s linear infinite;
+        }
+
+        @keyframes float {
+            from { transform: translateY(100vh); }
+            to { transform: translateY(-10vh); }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="main-text">BSDK 😭<br>Kaal se PRE-BOARD hain!</div>
+    <div id="subtext">(YAAD KRLE DALLE 💀)</div>
+
+    <!-- Sad background music -->
+    <audio id="https://www.fesliyanstudios.com/royalty-free-music/download/please-dont-cry/377" loop>
+        <source src=".mp3" type="https://www.fesliyanstudios.com/royalty-free-music/download/please-dont-cry/377">
+    </audio>
+
+    <button id="playBtn">Sad GAANA 😢</button>
+
+    <script>
+        // play music when button clicked
+        document.getElementById("playBtn").addEventListener("click", function () {
+            let music = document.getElementById("bgmusic");
+            music.play();
+            this.style.display = "none";
+        });
+
+        // Generate floating crying and middle finger emojis for comedy effect
+        function spawnEmoji() {
+            let emoji = document.createElement("div");
+            emoji.className = "emoji";
+            emoji.innerHTML = "😭";
+
+            emoji.style.left = Math.random() * 100 + "vw";
+            emoji.style.animationDuration = (3 + Math.random() * 3) + "s";
+
+            document.body.appendChild(emoji);
+
+            setTimeout(() => emoji.remove(), 6000);
+        }
+
+        setInterval(spawnEmoji, 800);
+    </script>
+
+</body>
+</html>
